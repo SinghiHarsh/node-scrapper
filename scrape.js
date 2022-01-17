@@ -17,7 +17,6 @@ async function scrape() {
         browser = await BrowseModel.startBrowser()
         let page = await browser.newPage()
         await page.goto(url)
-        await page.waitForSelector('.sc-1b0ahtz-0')
         
         let values = await page.evaluate(() => {
             const data = []
@@ -35,6 +34,8 @@ async function scrape() {
             onSale: values[2] ? true: false
         }
         console.log(result)
+        await browser.close()
+        process.exit(0)
     } catch (error) {
         await browser.close()
         throw error
