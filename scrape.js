@@ -1,5 +1,5 @@
 import BrowseModel from "./browser";
-import ConstantModel from "./constants";
+// import ConstantModel from "./constants";
 
 
 const ScrapeModel = {
@@ -8,10 +8,10 @@ const ScrapeModel = {
 
 export default ScrapeModel;
 
-async function scrape() {
+async function scrape(url) {
     let browser;
-    const { URL_CONSTANTS } = ConstantModel
-    const url = URL_CONSTANTS.BASE_URL
+    // const { URL_CONSTANTS } = ConstantModel
+    // const url = URL_CONSTANTS.BASE_URL
 
     try {
         browser = await BrowseModel.startBrowser()
